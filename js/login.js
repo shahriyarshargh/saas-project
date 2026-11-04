@@ -5,6 +5,9 @@
     const form =
       document.getElementById("login-form") ||
       document.querySelector(".login-modal form");
+      document.getElementById(forgot-password).addEventListener("click", function(e){
+        e.preventDefault();
+      });
 
     if (!form) {
       return;

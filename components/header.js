@@ -6,7 +6,7 @@ function renderHeader() {
     <header class="site-header">
       <div class="container header-container">
 
-        <a class="brand" href="index.html">
+        <a class="brand" href="master.html">
           <span class="brand-mark">ن</span>
           <span class="brand-info"> 
             <span class="brand-sub">خدمات هوشمند</span>
@@ -34,7 +34,7 @@ function renderHeader() {
           ${
             isLoggedIn
               ? `
-                <a href="dashboard.html" class="btn btn-primary">
+                <a href="#dashboard.html" data-page="dashboard" class="btn btn-primary">
                   پنل کاربری
                 </a>
               `
@@ -48,12 +48,10 @@ function renderHeader() {
         </div>
 
         <button
-          class="menu-toggle"
-          id="menu-toggle"
           type="button"
-          aria-label="باز کردن منو"
-          aria-expanded="false"
-        >
+                  class="btn btn-primary"
+                  onclick="Nova.openLogin()">ورود
+        
           <span></span>
           <span></span>
           <span></span>

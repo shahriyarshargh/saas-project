@@ -1,3 +1,5 @@
+/*استایل های اختصاصی master page نوا؛
+بدون وابستگی به کتابخانه خارجی */
 :root {
   --nova-primary: #6d4aff;
   --nova-primary-dark: #5133d4;
@@ -414,5 +416,18 @@ a {
   top: 12px;
   left: 12px;
   cursor: pointer;
+}
+
+.forgot-link{
+  display:block;
+  margin-top: 12px;
+  text-align: center;
+  font-size: 14px;
+  color:#ec122f;
+  cursor:pointer;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
 }
 }
