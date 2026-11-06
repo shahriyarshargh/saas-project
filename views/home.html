@@ -38,30 +38,41 @@
     <h2>از کجا شروع کنیم؟</h2>
   </div>
 
-  <div class="nova-card-grid">
+  <div class="nova-card-slider" data-slider>
+    <div class="nova-slider-track">
+      <article class="nova-card nova-slide">
+        <h3>خدمات</h3>
 
-    <article class="nova-card">
-      <h3>خدمات</h3>
+        <p>فهرست خدمات سامانه را مشاهده کنید.</p>
 
-      <p>فهرست خدمات سامانه را مشاهده کنید.</p>
+        <a href="#services" data-page="services">مشاهده خدمات ←</a>
+      </article>
 
-      <a href="#services" data-page="services">مشاهده خدمات ←</a>
-    </article>
+      <article class="nova-card nova-slide">
+        <h3>تعرفه</h3>
 
-    <article class="nova-card">
-      <h3>تعرفه</h3>
+        <p>پلن ها و هزینه های خدمات را بررسی کنید.</p>
 
-      <p>پلن ها و هزینه های خدمات را بررسی کنید.</p>
+        <a href="#plans" data-page="plans">مشاهده تعرفه‌ها ←</a>
+      </article>
 
-      <a href="#plans" data-page="plans">مشاهده تعرفه‌ها ←</a>
-    </article>
+      <article class="nova-card nova-slide">
+        <h3>پنل کاربری</h3>
 
-    <article class="nova-card">
-      <h3>پنل کاربری</h3>
+        <p>وارد حساب کاربری نمایشی خود شوید.</p>
 
-      <p>وارد حساب کاربری نمایشی خود شوید.</p>
+        <button class="nova-text-button" data-action="login">ورود به سامانه ←</button>
+      </article>
+    </div>
 
-      <button class="nova-text-button" data-action="login">ورود به سامانه ←</button>
-    </article>
+    <div class="nova-slider-controls">
+      <button type="button" class="nova-slider-btn" data-slider-prev aria-label="قبلی">→</button>
+      <div class="nova-slider-dots" aria-label="انتخاب اسلاید">
+        <button type="button" class="nova-slider-dot is-active" data-slider-index="0" aria-label="اسلاید 1"></button>
+        <button type="button" class="nova-slider-dot" data-slider-index="1" aria-label="اسلاید 2"></button>
+        <button type="button" class="nova-slider-dot" data-slider-index="2" aria-label="اسلاید 3"></button>
+      </div>
+      <button type="button" class="nova-slider-btn" data-slider-next aria-label="بعدی">←</button>
+    </div>
   </div>
 </section>

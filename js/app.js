@@ -100,8 +100,19 @@
 
     showToast("با موفقیت از حساب کاربری خارج شدید.", "success");
 
+    const currentPath = window.location.pathname || "";
+    const currentHash = (window.location.hash || "").toLowerCase();
+    const isDashboardPage =
+      currentPath.endsWith("dashboard.html") ||
+      currentHash === "#dashboard" ||
+      currentHash === "#/dashboard";
+
+    const redirectUrl = isDashboardPage
+      ? "master.html#home"
+      : "index.html#login";
+
     setTimeout(() => {
-      window.location.href = "index.html";
+      window.location.href = redirectUrl;
     }, 700);
   }
 
@@ -234,7 +245,12 @@
 
   // جلوگیری از ورود به پنل بدون ورود
   function protectDashboard() {
-    const isDashboard = window.location.pathname.endsWith("dashboard.html");
+    const currentPath = window.location.pathname || "";
+    const currentHash = (window.location.hash || "").toLowerCase();
+    const isDashboard =
+      currentPath.endsWith("dashboard.html") ||
+      currentHash === "#dashboard" ||
+      currentHash === "#/dashboard";
 
     if (isDashboard && !isLoggedIn()) {
       window.location.replace("index.html#login");
