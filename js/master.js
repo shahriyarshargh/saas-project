@@ -79,10 +79,16 @@
     let startX = 0;
 
     function renderSlider() {
-      track.style.width = `${slides.length * 100}%`;
-      track.style.transform = `translateX(-${index * (100 / slides.length)}%)`;
+      slides.forEach((slide, slideIndex) => {
+        const isActive = slideIndex === index;
+        slide.classList.toggle("is-active", isActive);
+        slide.hidden = !isActive;
+        slide.setAttribute("aria-hidden", String(!isActive));
+      });
+
       dots.forEach((dot, dotIndex) => {
         dot.classList.toggle("is-active", dotIndex === index);
+        dot.setAttribute("aria-current", String(dotIndex === index));
       });
     }
 

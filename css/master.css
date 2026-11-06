@@ -255,21 +255,21 @@ a {
 }
 
 .nova-slider-track {
-  display: flex;
   width: 100%;
-  transition: transform 0.35s ease;
-  will-change: transform;
 }
 
 .nova-slide {
-  flex: 0 0 100%;
+  display: none;
   width: 100%;
   box-sizing: border-box;
-  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   padding: 0;
   margin: 0;
+}
+
+.nova-slide.is-active {
+  display: flex;
 }
 
 .nova-slider-controls {
@@ -326,6 +326,32 @@ a {
 
 .nova-card p {
   color: var(--nova-muted);
+}
+
+.nova-card-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.nova-card-link:hover,
+.nova-card-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(109,74,255,.1);
+  border-color: var(--nova-primary);
+}
+
+.nova-card-button {
+  width: 100%;
+  text-align: right;
+  font: inherit;
+  color: inherit;
+  background: var(--nova-surface);
+  border: 1px solid var(--nova-border);
+  border-radius: 20px;
+  padding: 25px;
+  cursor: pointer;
 }
 
 .nova-card a,
