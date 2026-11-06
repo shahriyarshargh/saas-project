@@ -46,17 +46,6 @@ function renderHeader() {
               `
           }
         </div>
-
-        <button
-          type="button"
-                  class="btn btn-primary"
-                  onclick="Nova.openLogin()">ورود
-        
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-  
       </div>
       
     </header>
