@@ -371,7 +371,7 @@ a {
 
   .nova-card-grid {
     grid-template-columns: 1fr;
-}
+  }
 
   .nova-footer-inner {
     grid-template-columns: 1fr;
@@ -380,7 +380,9 @@ a {
   .nova-footer small {
     grid-column: auto;
   }
-  .modal-backdrop {
+}
+
+.modal-backdrop {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
@@ -425,16 +427,15 @@ a {
   cursor: pointer;
 }
 
-.forgot-link{
-  display:block;
+.forgot-link {
+  display: block;
   margin-top: 12px;
   text-align: center;
   font-size: 14px;
-  color:#ec122f;
-  cursor:pointer;
+  color: #ec122f;
+  cursor: pointer;
 }
 
 .forgot-link:hover {
   text-decoration: underline;
-}
 }

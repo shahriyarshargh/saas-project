@@ -5,9 +5,13 @@
     const form =
       document.getElementById("login-form") ||
       document.querySelector(".login-modal form");
-      document.getElementById(forgot-password).addEventListener("click", function(e){
-        e.preventDefault();
+
+    const forgotLink = document.getElementById("forgot-password");
+    if (forgotLink) {
+      forgotLink.addEventListener("click", function (event) {
+        event.preventDefault();
       });
+    }
 
     if (!form) {
       return;

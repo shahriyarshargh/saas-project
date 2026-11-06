@@ -1248,6 +1248,13 @@ button {
   margin: 7px 0 3px;
 }
 
+.login-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 18px;
+}
+
 .modal-subtitle {
   font-size: 12px;
 
@@ -1295,6 +1302,21 @@ button {
   border-color: #9d97f3;
 
   box-shadow: 0 0 0 4px #6d65df13;
+}
+
+.login-modal .forgot-link,
+.forgot-link {
+  display: block;
+  margin-top: 6px;
+  text-align: center;
+  font-size: 14px;
+  color: #ec122f;
+  cursor: pointer;
+}
+
+.login-modal .forgot-link:hover,
+.forgot-link:hover {
+  text-decoration: underline;
 }
 
 .form-note {
