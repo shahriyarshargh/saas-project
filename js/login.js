@@ -84,8 +84,11 @@
       Nova.closeLogin();
 
       // انتقال به پنل کاربری
+      const isMasterPage = window.location.pathname.includes("/master/");
+      const dashboardUrl = isMasterPage ? "../dashboard.html" : "dashboard.html";
+
       setTimeout(function () {
-        window.location.href = "dashboard.html";
+        window.location.href = dashboardUrl;
       }, 600);
     });
   });

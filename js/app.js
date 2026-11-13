@@ -15,6 +15,18 @@
     }
   }
 
+  function resolveProjectUrl(path) {
+    const currentPath = window.location.pathname || "";
+    const isNestedMasterPage = currentPath.includes("/master/");
+    const normalizedPath = String(path).replace(/^\/+/, "");
+
+    if (isNestedMasterPage) {
+      return `../${normalizedPath}`;
+    }
+
+    return normalizedPath;
+  }
+
   // ذخیره امن اطلاعات در localStorage
   function writeStorage(key, value) {
     try {
@@ -100,16 +112,7 @@
 
     showToast("با موفقیت از حساب کاربری خارج شدید.", "success");
 
-    const currentPath = window.location.pathname || "";
-    const currentHash = (window.location.hash || "").toLowerCase();
-    const isDashboardPage =
-      currentPath.endsWith("dashboard.html") ||
-      currentHash === "#dashboard" ||
-      currentHash === "#/dashboard";
-
-    const redirectUrl = isDashboardPage
-      ? "master.html#home"
-      : "index.html#login";
+    const redirectUrl = resolveProjectUrl("index.html#login");
 
     setTimeout(() => {
       window.location.href = redirectUrl;
@@ -121,7 +124,7 @@
     const modal = document.querySelector(".modal-backdrop");
 
     if (!modal) {
-      window.location.href = "index.html#login";
+      window.location.href = resolveProjectUrl("index.html#login");
       return;
     }
 
@@ -141,12 +144,14 @@
   // بستن پنجره ورود
   function closeLogin() {
     const modal = document.querySelector(".modal-backdrop");
-    modal.style.display = "none";
 
-    if (modal) {
-      modal.classList.remove("open");
-      document.body.style.overflow = "";
+    if (!modal) {
+      return;
     }
+
+    modal.style.display = "none";
+    modal.classList.remove("open");
+    document.body.style.overflow = "";
   }
 
   // ذخیره درخواست کاربر
@@ -253,7 +258,7 @@
       currentHash === "#/dashboard";
 
     if (isDashboard && !isLoggedIn()) {
-      window.location.replace("index.html#login");
+      window.location.replace(resolveProjectUrl("index.html#login"));
     }
   }
 
